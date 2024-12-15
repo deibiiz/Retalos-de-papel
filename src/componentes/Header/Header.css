@@ -1,0 +1,55 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(245, 206, 148, 0.9); 
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.barraBusqueda {
+    display: flex;
+    gap: 20px;
+}
+
+.barraBusqueda input{
+    width:auto;
+}
+
+.barraBusqueda button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.navLinks {
+    display: flex;
+    gap: 20px;
+}
+
+.navLinks a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.carritoIcono .cartItems {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+}
