@@ -1,0 +1,47 @@
+.contenedorLibro {
+    text-align: center;
+    width: 200px;
+    height: 350px;
+    margin: 20px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.4s;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.contenedorLibro:hover {
+    transform: scale(1.05);
+}
+
+.portadaLibro {
+    width: 100%;
+    height: 249px;
+    border-radius: 5px;
+}
+
+.seleccionableLibro {
+    text-decoration: none;
+    color: black;
+
+}
+
+.seleccionableLibro h3 {
+    font-size: 17px;
+    height: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.seleccionableLibro p {
+    font-size: 14px;
+    color: #555;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

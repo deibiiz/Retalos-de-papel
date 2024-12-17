@@ -2,24 +2,35 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(245, 206, 148, 0.9); 
-    padding: 10px 20px;
+    background-color: rgba(245, 206, 148, 0.9);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  }
+    height: 80px;
+    box-sizing: border-box;
+}
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
+    height: 100%;
+    max-width: 120px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .barraBusqueda {
+    text-align: center;
     display: flex;
-    gap: 20px;
+    height: 60%;
+    flex-grow: 1;
+    max-width: 100%;
+    margin: 0 20px;
 }
 
-.barraBusqueda input{
-    width:auto;
+.barraBusqueda input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    width: max-content;
+    font-size: 14px;
+    color: #333;
 }
 
 .barraBusqueda button {
@@ -27,29 +38,67 @@
     color: white;
     border: none;
     padding: 10px 20px;
+    margin-left: 0px;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 17px;
     font-weight: bolder;
 }
 
 .navLinks {
     display: flex;
-    gap: 20px;
+    gap: 50px;
+    margin-right: 50px;
 }
 
-.navLinks a {
+nav a {
     text-decoration: none;
     color: #333;
-    font-weight: bold;
+    font-size: 17px;
+    font-style: italic;
 }
 
-.carritoIcono .cartItems {
+.carrito {
+    position: relative;
+    margin-right: 70px;
+}
+
+.carritoItems {
     position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: #e74c3c;
+    top: -7px;
+    right: -10px;
+    background-color: red;
     color: white;
     border-radius: 50%;
-    padding: 5px;
-    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
+.imagenCarrito {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: nowrap;
+    }
+
+    .barraBusqueda button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .navLinks {
+        display: none;
+    }
+
+    .carrito {
+        margin-right: 10px;
+    }
 }

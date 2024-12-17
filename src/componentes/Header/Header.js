@@ -1,28 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
+    const [carrito, setCarrito] = useState(0);
+    const [libroBusqueda, setLibroBusqueda] = useState('');
+    const navigate = useNavigate();
+
+    const buscarLibro = (e) => {
+        e.preventDefault(); // Evitar que el formulario recargue la página
+        navigate(`/Home?search=${libroBusqueda}`);
+    };
+
     return (
         <header className="header">
-            <div className="logo">
-                <img src="/src/imagenes/logo.jpg" alt="Logo" />
-            </div>
+            <img src="/imagenes/logo.jpg" alt="Logo" className="logo" />
 
-            <div className="barraBusqueda">
-                <input type="text" placeholder="Buscar libros" />
-                <button>Buscar</button>
-            </div>
+            <form className="barraBusqueda" onSubmit={buscarLibro}>
+                <input
+                    type="text"
+                    placeholder="Buscar libros"
+                    value={libroBusqueda}
+                    onChange={(e) => setLibroBusqueda(e.target.value)}
+                />
+                <button type="submit">Buscar</button>
+            </form>
 
             <nav className="navLinks">
-                <a href="/Home">Inicio</a>
-                <a href="/categorias">Categorías</a>
+                <Link to="/">Landing</Link>
+                <Link to="/Home">Inicio</Link>
             </nav>
 
-            <div className="carritoIcono">
-                <img src="cart-icon.png" alt="Carrito" />
-                <span className="carritoItems">3</span>
+            <div className="carrito">
+                <Link to="/carrito">
+                    <img src="/imagenes/carrito.png" alt="Carrito" className="imagenCarrito" />
+                    <span className="carritoItems">{carrito}</span>
+                </Link>
             </div>
-
         </header>
     );
 };

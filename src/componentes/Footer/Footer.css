@@ -1,0 +1,20 @@
+footer {
+    background-color: #f5ce94;
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.infoFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.footer-bottom {
+    font-size: 14px;
+}

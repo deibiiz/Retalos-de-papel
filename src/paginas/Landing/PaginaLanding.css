@@ -6,14 +6,14 @@
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-image: url('/src/imagenes/IMGLibreria.jpg');
+  background-image: url('/public/imagenes/libreria.jpg');
 }
 
 .texto-container {
   text-align: center;
-  background-color: rgba(245, 206, 148, 0.9);     
+  background-color: rgba(245, 206, 148, 0.9);
   padding: 30px;
-  z-index: 1; 
+  z-index: 1;
   border-radius: 10px;
   animation: fadeIn 1s ease-out;
 }
@@ -34,12 +34,12 @@
   height: 10px;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  margin: 20px 30px 0px 30px; 
+  margin: 20px 30px 0px 30px;
 }
 
 .progreso {
   height: 100%;
-  background-color: #3498db; 
+  background-color: #3498db;
   border-radius: 5px;
 }
 
@@ -47,6 +47,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -56,8 +57,8 @@
   .titulo {
     font-size: 2rem;
   }
+
   .subtitulo {
     font-size: 1.2rem;
   }
 }
-

@@ -4,18 +4,14 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   height: 100%;
   font-family: 'Arial', sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #000000;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Helvetica', sans-serif;
-}
-
-body {
-  background-color: #f5f5f5;
+  background-color: #f4f1ee;
+  display: flex;
+  flex-direction: column;
 }
