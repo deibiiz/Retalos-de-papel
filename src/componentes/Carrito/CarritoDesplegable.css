@@ -1,0 +1,89 @@
+ul {
+    list-style-type: none;
+}
+
+h2 {
+    margin-bottom: 25px;
+}
+
+.carritoModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.carritoContenido {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    position: relative;
+}
+
+.cerrarCarrito {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.verCarritoCompleto {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.detalleCarritoItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.detalleCarritoItem span {
+    flex: 1;
+}
+
+.botonIncrementar,
+.botonDecrementar {
+    padding: 5px 10px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.botonIncrementar {
+    background-color: #54bd57;
+    color: white;
+}
+
+.botonDecrementar {
+    background-color: #f53d30;
+    color: white;
+}
+
+.botonIncrementar:hover {
+    background-color: #3e9743;
+}
+
+.botonDecrementar:hover {
+    background-color: #d92e2c;
+}

@@ -1,0 +1,22 @@
+.seccionInformativa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 24px 0;
+    text-align: center;
+}
+
+.texto {
+    max-width: 600px;
+    padding: 16px;
+}
+
+.texto h2 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: black;
+}
+
+.texto p {
+    color: gray;
+}
