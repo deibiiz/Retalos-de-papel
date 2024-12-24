@@ -1,11 +1,14 @@
 import React from 'react';
 import { AppRouter } from './AppRouter';
+import { CarritoProvider } from './CarritoContext';
 import './App.css';
 
 const App = () => {
   return (
     <div className="container">
-      <AppRouter />
+      <CarritoProvider>
+        <AppRouter />
+      </CarritoProvider>
     </div>
   );
 };

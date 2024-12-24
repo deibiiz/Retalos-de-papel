@@ -1,11 +1,22 @@
-import React from "react";
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { libros } from '../../data/Libros'; // Datos mock
+import DetalleLibro from '../../componentes/DetalleLibro/DetalleLibro'; // Componente reutilizable
+import './PaginaLibro.css';
 
-const PaginaLibro = () => {
+const PaginaDetalleLibro = () => {
+    const { id } = useParams(); // Obtener el ID de la URL
+    const libro = libros.find((libro) => libro.id === parseInt(id, 10)); // Buscar el libro por ID
+
+    if (!libro) {
+        return <p>Libro no encontrado.</p>;
+    }
+
     return (
-        <div>
-            <h1>PaginaLibro.js</h1>
+        <div className="paginaDetalleLibro">
+            <DetalleLibro libro={libro} />
         </div>
     );
 };
 
-export default PaginaLibro;
+export default PaginaDetalleLibro;

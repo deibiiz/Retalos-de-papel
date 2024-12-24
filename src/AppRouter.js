@@ -4,8 +4,8 @@ import Layout from './componentes/Layout/Layout';
 import PaginaLanding from './paginas/Landing/PaginaLanding';
 import PaginaLibro from './paginas/Libro/PaginaLibro';
 import PaginaHome from './paginas/Home/PaginaHome';
-import PaginaPago from './paginas/Pago/PaginaPago';
 import PaginaCarrito from './paginas/Carrito/paginaCarrito';
+import SobreNostros from './paginas/SobreNosotros/SobreNosotros';
 
 
 export const AppRouter = () => {
@@ -17,8 +17,8 @@ export const AppRouter = () => {
         <Route path="/" element={<PaginaLanding />} />
         <Route path="/Home" element={<Layout><PaginaHome /></Layout>} />
         <Route path="Libro/:id" element={<Layout><PaginaLibro /></Layout>} />
-        <Route path="/Resumen" element={<Layout><PaginaPago /></Layout>} />
         <Route path="/Carrito" element={<Layout><PaginaCarrito /></Layout>} />
+        <Route path="/SobreNosotros" element={<Layout><SobreNostros /></Layout>} />
       </Routes>
     </BrowserRouter>
   );

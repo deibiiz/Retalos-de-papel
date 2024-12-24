@@ -11,7 +11,12 @@
 .logo {
     height: 100%;
     max-width: 120px;
+    overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+    max-height: 100%;
 }
 
 .barraBusqueda {
@@ -61,6 +66,7 @@ nav a {
 .carrito {
     position: relative;
     margin-right: 70px;
+    cursor: pointer;
 }
 
 .carritoItems {

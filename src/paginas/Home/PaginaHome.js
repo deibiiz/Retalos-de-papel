@@ -1,25 +1,24 @@
 import React, { useEffect } from 'react';
-import './PaginaHome.css';
+import { useLocation } from 'react-router-dom'; // Para acceder a los parámetros de la URL
+import useSearch from '../../hooks/useBusqueda';
 import { libros } from '../../data/Libros';
 import Libro from '../../componentes/Libro/Libro';
-import { useLocation } from 'react-router-dom'; // Para acceder a los parámetros de la URL
+import './PaginaHome.css';
 
 const PaginaHome = () => {
     const location = useLocation();
-    const queryParams = new URLSearchParams(location.search);
-    const searchQuery = queryParams.get('search') || ''; // Obtener el parámetro 'search' de la URL
+    const parametrosQuery = new URLSearchParams(location.search);
+    const parametroBusqueda = parametrosQuery.get('busqueda') || ''; // Obtener el parámetro 'busqueda' de la URL
 
-    const filteredBooks = libros.filter((libro) =>
-        libro.titulo.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    const librosFiltrados = useSearch(libros, parametroBusqueda);
 
     return (
         <div className="mainContainer">
             <div className="ListaLibros">
-                {filteredBooks.length === 0 ? (
+                {librosFiltrados.length === 0 ? (
                     <p>No se encontraron libros que coincidan con tu búsqueda.</p>
                 ) : (
-                    filteredBooks.map((libro) => (
+                    librosFiltrados.map((libro) => (
                         <Libro key={libro.id} libro={libro} />
                     ))
                 )}

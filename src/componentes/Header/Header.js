@@ -1,20 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { CarritoContext } from "../../CarritoContext";
+import CarritoDesplegable from "../Carrito/CarritoDesplegable";
 import "./Header.css";
 
 const Header = () => {
-    const [carrito, setCarrito] = useState(0);
+    const { carrito, decrementarDelCarrito, incrementarCantidad } = useContext(CarritoContext);
     const [libroBusqueda, setLibroBusqueda] = useState('');
+    const [mostrarCarrito, setMostrarCarrito] = useState(false);
     const navigate = useNavigate();
+
+    const cantidadTotalCarrito = carrito.reduce((total, item) => total + item.cantidad, 0);
 
     const buscarLibro = (e) => {
         e.preventDefault(); // Evitar que el formulario recargue la página
-        navigate(`/Home?search=${libroBusqueda}`);
+        navigate(`/Home?busqueda=${libroBusqueda}`);
+    };
+
+    const toggleCarrito = () => {
+        setMostrarCarrito(!mostrarCarrito);
+    };
+
+    const cerrarCarrito = () => {
+        setMostrarCarrito(false);
+    };
+
+    const verCarritoCompleto = () => {
+        setMostrarCarrito(false);
+        navigate("/carrito");
     };
 
     return (
         <header className="header">
-            <img src="/imagenes/logo.jpg" alt="Logo" className="logo" />
+
+            <div className="logo">
+                <Link to="/Home">
+                    <img src="/imagenes/logo.jpg" alt="Logo" />
+                </Link>
+            </div>
 
             <form className="barraBusqueda" onSubmit={buscarLibro}>
                 <input
@@ -32,11 +55,14 @@ const Header = () => {
             </nav>
 
             <div className="carrito">
-                <Link to="/carrito">
-                    <img src="/imagenes/carrito.png" alt="Carrito" className="imagenCarrito" />
-                    <span className="carritoItems">{carrito}</span>
-                </Link>
+                <img src="/imagenes/carrito.png" alt="Carrito" className="imagenCarrito" onClick={toggleCarrito} />
+                <span className="carritoItems">{cantidadTotalCarrito} </span>
             </div>
+
+            {mostrarCarrito && (
+                <CarritoDesplegable carrito={carrito} cerrarCarrito={cerrarCarrito} verCarritoCompleto={verCarritoCompleto} incrementarCantidad={incrementarCantidad} decrementarDelCarrito={decrementarDelCarrito} />
+            )}
+
         </header>
     );
 };
